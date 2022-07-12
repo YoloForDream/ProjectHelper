@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Phaselib">
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/../../../../DEV/Phaselib" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="file://$PROJECT_DIR$/../../../../DEV/Phaselib" />
+    </SOURCES>
+    <jarDirectory url="file://$PROJECT_DIR$/../../../../DEV/Phaselib" recursive="false" />
+    <jarDirectory url="file://$PROJECT_DIR$/../../../../DEV/Phaselib" recursive="false" type="SOURCES" />
+  </library>
+</component>
