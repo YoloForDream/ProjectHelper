@@ -1,0 +1,19 @@
+<PhaseOutputDescription>
+	<!-- serialized output -->
+	<PhaseOutput>
+		<Name>outputValuesSerializ</Name>
+		<DisplayName>Output values</DisplayName>
+		<Description>Set of output values in serialized form</Description>
+		<DataType>
+			<Binary />
+		</DataType>
+	</PhaseOutput>
+	<PhaseOutput>
+        <Name>allGetSuccessful</Name>
+        <DisplayName>Automation get successful</DisplayName>
+        <Description>Flag if all automation values are read successfully</Description>
+        <DataType>
+            <Bool />
+        </DataType>
+    </PhaseOutput>
+</PhaseOutputDescription>    

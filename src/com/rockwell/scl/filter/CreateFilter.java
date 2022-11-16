@@ -28,7 +28,7 @@ public class CreateFilter {
         Connection connection = connectionFactory.createConnection("admin", "admin");
         connection.start();
         Session session = connection.createSession(false, Session.AUTO_ACKNOWLEDGE);
-        Queue queue = session.createQueue("prd1");
+        Queue queue = session.createQueue("ind0804");
         MessageConsumer consumer = session.createConsumer(queue);
         Gson gson = new Gson();
         while (true) {

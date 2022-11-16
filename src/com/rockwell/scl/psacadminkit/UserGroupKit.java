@@ -1,17 +1,16 @@
 package com.rockwell.scl.psacadminkit;
 
+import com.datasweep.compatibility.client.*;
+import com.datasweep.compatibility.ui.Time;
+import com.rockwell.mes.commons.base.ifc.services.PCContext;
+
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.datasweep.compatibility.client.Response;
-import com.datasweep.compatibility.client.User;
-import com.datasweep.compatibility.client.UserFilter;
-import com.datasweep.compatibility.client.UserGroup;
-import com.datasweep.compatibility.client.UserGroupFilter;
-import com.datasweep.compatibility.ui.Time;
-import com.rockwell.mes.commons.base.ifc.services.PCContext;
-
+/**
+ * @author RWang18
+ */
 public class UserGroupKit {
 
     List<UserGroup> userGroups;

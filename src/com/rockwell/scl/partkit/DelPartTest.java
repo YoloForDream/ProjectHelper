@@ -12,7 +12,7 @@ public class DelPartTest {
         System.setProperty("com.rockwell.test.username", "ken");
         System.setProperty("com.rockwell.test.password", "1");
         System.setProperty("HOST_ADDRESS", "192.168.108.209");
-        PartEntity partEntity = new PartEntity("1000072");
-        partEntity.deletePart();
+        PartEntity partEntity = new PartEntity();
+        partEntity.deletePart("1000072");
     }
 }

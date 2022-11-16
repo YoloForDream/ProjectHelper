@@ -37,14 +37,11 @@ public class t1 {
                 MESControlRecipe mesControlRecipe = new MESControlRecipe(poi.getControlRecipe());
                 List<IMESRtPhase> allRtPhases = mesControlRecipe.getAllRtPhases();
                 for (IMESRtPhase allRtPhase : allRtPhases) {
-
                     if (allRtPhase.getPhaseLib().getPhaseLibName().equals("Record Pause Interval(SCL) [1.0]")) {
                         System.out.println(processOrderItemList.get(i));
                         String Path = getRecipePath(allRtPhase.getPhase());
                         System.out.println(Path);
-
                         break labelEnd;
-
                     }
                 }
             }

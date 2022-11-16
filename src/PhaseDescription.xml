@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PhaseLibDescription>
+	<OutputDir>C:\tmp\</OutputDir>
+	<Name>Get OPC Values (RS) [1.0]</Name>
+	<Description>For automation, allows to read up to 50 groups of numeric, boolean, or string tag values.
+	</Description>
+	<PackageName>com.rockwell.mes.phase.eqaigetopcvalues</PackageName>
+	<PhaseLibBaseName>EqAIGetOPCVals0100</PhaseLibBaseName>
+	<VisibleInNavigator value="true" />
+	<InternalBuildingBlock value="false" />
+    <ReportDesignName>PS-BatchReport-PhaseEqAIGetOPCValues_0100</ReportDesignName>
+	<SupportExceptions value="true" />
+	<MaterialInputMin>0</MaterialInputMin>
+	<MaterialInputMax>0</MaterialInputMax>
+	<MaterialOutputMin>0</MaterialOutputMin>
+	<MaterialOutputMax>0</MaterialOutputMax>
+	<ATDefinitionPrefix>RS_</ATDefinitionPrefix>
+	<UsageContext>All</UsageContext>
+	<ParameterClasses>
+		<ParameterClass>
+			<Name>Plain Instruction (RS) [1.0]</Name>
+			<UsageIdentifier>Instruction</UsageIdentifier>
+			<SortIndex>1</SortIndex>
+		</ParameterClass>
+		<ParameterClass>
+			<Name>EQ Object (RS) [2.0]</Name>
+			<UsageIdentifier>Identified equipment entity</UsageIdentifier>
+			<SortIndex>2</SortIndex>
+		</ParameterClass>
+		<ParameterClass>
+			<Name>Phase Completion Mode (RS) [2.0]</Name>
+			<UsageIdentifier>Mode</UsageIdentifier>
+			<SortIndex>3</SortIndex>
+		</ParameterClass>
+		<ParameterClass>
+            <Name>Exception Definition (RS) [3.0]</Name>
+            <UsageIdentifier>Override recorded value</UsageIdentifier>
+            <SortIndex>4</SortIndex>
+        </ParameterClass>
+	</ParameterClasses>	
+    <DynamicParameterClasses>
+        <MaximumNumber>50</MaximumNumber>        
+        <DynamicParameterClass>
+            <Name>OPC Get Numeric Property (RS) [1.0]</Name>            
+            <UsageIdentifier>Numeric</UsageIdentifier>
+            <DependentParameterClass>
+                <Name>Exception Enable Definition No (RS) [1.0]</Name>
+                <UsageIdentifier>L-H configuration</UsageIdentifier>
+                <SortIndex>1</SortIndex>
+            </DependentParameterClass>
+            <DependentParameterClass>
+                <Name>Exception Enable Definition No (RS) [1.0]</Name>
+                <UsageIdentifier>LL-HH configuration</UsageIdentifier>
+                <SortIndex>2</SortIndex>
+            </DependentParameterClass>
+            <DependentParameterClass>
+                <Name>EQ Two-Range Limit Definition (RS) [1.0]</Name>
+                <UsageIdentifier>Limit definition</UsageIdentifier>
+                <SortIndex>3</SortIndex>
+            </DependentParameterClass>          
+        </DynamicParameterClass>         
+        <DynamicParameterClass>
+            <Name>EQ Get String Property (RS) [2.0]</Name>            
+            <UsageIdentifier>String</UsageIdentifier>
+            <DependentParameterClass>
+                <Name>Exception Enable Definition No (RS) [1.0]</Name>
+                <UsageIdentifier>Expected value configuration</UsageIdentifier>
+                <SortIndex>1</SortIndex>
+            </DependentParameterClass>
+            <DependentParameterClass>
+                <Name>String Value (RS) [1.0]</Name>
+                <UsageIdentifier>Expected value definition</UsageIdentifier>
+                <SortIndex>2</SortIndex>
+            </DependentParameterClass>              
+        </DynamicParameterClass>  
+        <DynamicParameterClass>
+            <Name>EQ Get Boolean Property (RS) [2.0]</Name>            
+            <UsageIdentifier>Boolean</UsageIdentifier>            
+            <DependentParameterClass>
+                <Name>Exception Enable Definition No (RS) [1.0]</Name>
+                <UsageIdentifier>Expected value configuration</UsageIdentifier>
+                <SortIndex>1</SortIndex>
+            </DependentParameterClass> 
+            <DependentParameterClass>
+                <Name>Boolean Value (RS) [1.0]</Name>
+                <UsageIdentifier>Expected value definition</UsageIdentifier>
+                <SortIndex>2</SortIndex>
+            </DependentParameterClass>           
+        </DynamicParameterClass>             
+    </DynamicParameterClasses>
+</PhaseLibDescription>

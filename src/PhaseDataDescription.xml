@@ -1,0 +1,93 @@
+<RtPhaseDataAttributes>
+	<RtPhaseDataAttribute>
+		<Name>eqIdentifier</Name>
+		<Description>The equipment identifier</Description>
+		<DataType>
+			<String length="80" />
+		</DataType>
+	</RtPhaseDataAttribute>
+	<RtPhaseDataAttribute>
+		<Name>eqShortDescription</Name>
+		<Description>The equipment short description</Description>
+		<DataType>
+			<String length="2000" />
+		</DataType>
+	</RtPhaseDataAttribute>
+	<RtPhaseDataAttribute>
+		<Name>property</Name>
+		<Description>The name of the automation property containing the tag data</Description>
+		<DataType>
+			<String length="2000" />
+		</DataType>
+	</RtPhaseDataAttribute>
+    <RtPhaseDataAttribute>
+        <Name>bundleName</Name>
+        <Description>The name of the parameter bundle corresponding to this property</Description>
+        <DataType>
+            <String length="255" />
+        </DataType>
+    </RtPhaseDataAttribute>
+    <RtPhaseDataAttribute>
+        <Name>numericValue</Name>
+        <Description>Automation value</Description>
+        <DataType>
+            <BigDecimal />
+        </DataType>
+    </RtPhaseDataAttribute>
+    <RtPhaseDataAttribute>
+        <Name>booleanValue</Name>
+        <Description>Automation value</Description>
+        <DataType>
+            <Bool />
+        </DataType>
+    </RtPhaseDataAttribute>
+    <RtPhaseDataAttribute>
+        <Name>stringValue</Name>
+        <Description>Automation value</Description>
+        <DataType>
+            <String length="4000" />            
+        </DataType>
+    </RtPhaseDataAttribute>
+    <RtPhaseDataAttribute>
+        <Name>uom</Name>
+        <Description>Unit of measurement</Description>
+        <DataType>
+            <String length="20" />
+        </DataType>
+    </RtPhaseDataAttribute>    
+    <RtPhaseDataAttribute>
+        <Name>propertyDataType</Name>
+        <Description>The property data type (for supported data types)</Description>
+        <DataType>
+            <String length="80" />
+        </DataType>
+    </RtPhaseDataAttribute>
+    <RtPhaseDataAttribute>
+        <Name>timestampValue</Name>
+        <Description>Automation timestamp</Description>
+        <DataType>
+            <DateTime/>
+        </DataType>
+    </RtPhaseDataAttribute>
+    <RtPhaseDataAttribute>
+        <Name>isValueOverridden</Name>
+        <Description>Flag if the automation value is overridden</Description>
+        <DataType>
+            <Bool />
+        </DataType>
+    </RtPhaseDataAttribute> 
+     <RtPhaseDataAttribute>
+        <Name>isLimitViolateSigned</Name>
+        <Description>Flag if the potential limit violation has been signed</Description>
+        <DataType>
+            <Bool />
+        </DataType>
+    </RtPhaseDataAttribute>
+    <RtPhaseDataAttribute>
+        <Name>hasValueBeenRead</Name>
+        <Description>Flag indicating if the value has been read from the automation layer or not </Description>
+        <DataType>
+            <Bool />
+        </DataType>
+    </RtPhaseDataAttribute>       
+</RtPhaseDataAttributes>

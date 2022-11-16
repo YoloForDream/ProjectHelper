@@ -1,35 +1,41 @@
 package com.rockwell.scl.partkit;
+
+import com.datasweep.compatibility.client.Part;
 import com.google.gson.Gson;
+import com.rockwell.mes.commons.base.ifc.services.PCContext;
 import com.rockwell.scl.partkit.model.MaterialEntity;
 import com.rockwell.scl.partkit.model.PartEntity;
 import org.apache.activemq.ActiveMQConnectionFactory;
+
 import javax.jms.*;
 /**
  * @author RWang18
  */
 public class PartCreator {
     public static void main(String[] args) throws JMSException {
-//        System.setProperty("com.rockwell.test.username", "BJMESADMIN");
-//        System.setProperty("com.rockwell.test.password", "CNK2sva1!");
+        System.setProperty("com.rockwell.test.username", "BJMESADMIN");
+        System.setProperty("com.rockwell.test.password", "CNK2sva1!");
 //        System.setProperty("HOST_ADDRESS", "192.168.59.10");
 //        System.setProperty("com.rockwell.test.username", "dladmin");
 //        System.setProperty("com.rockwell.test.password", "Kx-123456");
 //        System.setProperty("HOST_ADDRESS", "172.20.11.12");
-        System.setProperty("com.rockwell.test.username", "ken");
-        System.setProperty("com.rockwell.test.password", "1");
-        System.setProperty("HOST_ADDRESS", "192.168.108.162");
+//        System.setProperty("com.rockwell.test.username", "ken");
+//        System.setProperty("com.rockwell.test.password", "1");
+        System.setProperty("HOST_ADDRESS", "192.168.59.10");
 //        String ip = "192.168.59.10";
 //        String ip = "172.20.11.12";
-        String ip = "192.168.108.162";
+        String ip = "192.168.59.10";
         String port = "61616";
         String brokerUrl = "tcp://"+ip+":"+port;
         ActiveMQConnectionFactory connectionFactory = new ActiveMQConnectionFactory(brokerUrl);
         Connection connection = connectionFactory.createConnection("admin", "admin");
         connection.start();
+        Part part = PCContext.getFunctions().getPart("") ;
+
         Session session = connection.createSession(false, Session.AUTO_ACKNOWLEDGE);
 
         //Session session = conn.createTopicSession(false, Session.AUTO_ACKNOWLEDGE);
-        Queue queue = session.createQueue("prd");
+        Queue queue = session.createQueue("p100");
 
         //Topic topic = session.createTopic("part"); Topic模式
 

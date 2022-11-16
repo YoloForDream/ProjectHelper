@@ -1,17 +1,14 @@
 package com.rockwell.scl.psacadminkit;
 
 
+import com.datasweep.compatibility.client.*;
+import com.datasweep.compatibility.ui.Time;
+import com.rockwell.mes.commons.base.ifc.services.PCContext;
+
+import java.text.SimpleDateFormat;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Vector;
-
-import com.datasweep.compatibility.client.AccessPrivilege;
-import com.datasweep.compatibility.client.AccessPrivilegeFilter;
-import com.datasweep.compatibility.client.Response;
-import com.datasweep.compatibility.client.UserGroup;
-import com.datasweep.compatibility.client.UserGroupFilter;
-import com.rockwell.mes.commons.base.ifc.services.PCContext;
-import com.datasweep.compatibility.ui.Time;
-import java.text.SimpleDateFormat;
 public class AccessPrivilegesHelper {
 
     List<UserGroup> userGroups;
@@ -24,15 +21,13 @@ public class AccessPrivilegesHelper {
 
     String[] listOfAccessPrivielegeKeys;
 
-    String accessPrivilegeKey;
+//    String accessPrivilegeKey;
 
     String result;
 
     Response response;
 
     Time operatorTime;
-
-
 
     public String getResult() {
 
@@ -64,8 +59,9 @@ public class AccessPrivilegesHelper {
         AccessPrivilegeFilter accessPrivilegeFilter = PCContext.getFunctions().createAccessPrivilegeFilter().orderByAccessPrivilegeName(true);
         listOfAccessPrivileges = PCContext.getFunctions().getFilteredAccessPrivileges(accessPrivilegeFilter);
         this.userGroupName = userGroupName;
-        this.accessPrivilegeKey = accessPrivilegeKey;
+        accessPrivilegeKey = accessPrivilegeKey.replaceAll("\\s+","");
         listOfAccessPrivielegeKeys = accessPrivilegeKey.substring(1, accessPrivilegeKey.length() - 1).split(",");
+        System.out.println(Arrays.toString(listOfAccessPrivielegeKeys));
     }
 
     public void addPerGroup() {
@@ -76,9 +72,10 @@ public class AccessPrivilegesHelper {
                     for (int k = 0; k < userGroups.size(); k++) {
                         if (userGroups.get(k).getName().equals(userGroupName)) {
                             listOfAccessPrivileges.get(j).addPerformerGroup(userGroups.get(k));
+                            listOfAccessPrivileges.get(j).getPerformedBySignature();
+                            listOfAccessPrivileges.get(j).getVerifiedBySignature();
                             response = listOfAccessPrivileges.get(j).save(null, null);
                             response.getResult();
-
                         }
                     }
                 }
@@ -96,7 +93,6 @@ public class AccessPrivilegesHelper {
                         if (userGroups.get(k).getName().equals(userGroupName)) {
                             listOfAccessPrivileges.get(j).removePerformerGroup(userGroups.get(k));
                             response = listOfAccessPrivileges.get(j).save(null, null);
-
                             response.getResult();
 
                         }
@@ -131,10 +127,8 @@ public class AccessPrivilegesHelper {
                     for (int k = 0; k < userGroups.size(); k++) {
                         if (userGroups.get(k).getName().equals(userGroupName)) {
                             listOfAccessPrivileges.get(j).removeVerifierGroup(userGroups.get(k));
-                          
                             response = listOfAccessPrivileges.get(j).save(null, null);
                             response.getResult();
-
                         }
                     }
                 }

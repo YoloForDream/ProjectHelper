@@ -33,6 +33,7 @@ public class FilterHelper {
     private static final String FALSE = "否";
     private static final String FALSE_TRANSPORT_LONG = "20";
     private static final String TRUE_TRANSPORT_LONG = "10";
+
     public MeasuredValue covertStringToMeasuredValue(String str) throws Exception {
         UnitOfMeasureManager uomFilter = PCContext.getServerImpl().getUnitOfMeasureManager();
         IUnitOfMeasure uom;
@@ -43,7 +44,7 @@ public class FilterHelper {
                 uom = uomFilter.getUnitOfMeasureBySymbol(uomName.trim());
                 UnitOfMeasure localUnitOfMeasure = (UnitOfMeasure) uom;
         MeasuredValue measuredValue;
-        measuredValue = MeasuredValueUtilities.createMV(valueBigDecimal, localUnitOfMeasure);
+        measuredValue = MeasuredValueUtilities.createMV(valueBigDecimal,localUnitOfMeasure);
         return measuredValue;
     }
 
@@ -59,7 +60,7 @@ public class FilterHelper {
                 info.setSerialNo(entity.getSerialNo());
             }
             if(!Objects.equals(entity.getManufacturer(), NULL_VALUE)){
-
+                
                 info.setManufacturer(entity.getManufacturer());
             }
             if(!Objects.equals(entity.getFilterOpenDate(), NULL_VALUE)){
@@ -88,7 +89,6 @@ public class FilterHelper {
                     calendar.setTime(date);
                     Time sysDate = new Time(calendar);
                     info.setFilterOpenDateExpiration(sysDate);
-
                 }catch (ParseException exception){
                     exception.printStackTrace();
                 }
@@ -171,10 +171,9 @@ public class FilterHelper {
                info.setMaterialName(entity.getMaterialName());
            }
            if(!Objects.equals(entity.getOperator(), NULL_VALUE)){
-
                info.setOperator(entity.getOperator());
            }
-            if(!Objects.equals(entity.getOperateType(), NULL_VALUE)){
+           if(!Objects.equals(entity.getOperateType(), NULL_VALUE)){
                 info.setOperateType(entity.getOperateType());
             }
             else {
@@ -189,9 +188,9 @@ public class FilterHelper {
             if(!Objects.equals(entity.getRecipePath(), NULL_VALUE)){
                 info.setRecipePath(entity.getRecipePath());
             }
-           if(!Objects.equals(entity.getComments(), NULL_VALUE)){
+            if(!Objects.equals(entity.getComments(), NULL_VALUE)){
                info.setComments(entity.getComments());
-           }
+            }
             if(!Objects.equals(entity.getHasCollectedAsConsume(), NULL_VALUE)){
                 info.setHasCollectedAsConsume(Long.valueOf(entity.getHasCollectedAsConsume()));
             }
@@ -229,13 +228,11 @@ public class FilterHelper {
                     calendar.setTime(date);
                     Time sysDate = new Time(calendar);
                     info.setFilterOpenDate(sysDate);
-
                 }catch (ParseException exception){
                     exception.printStackTrace();
                 }
             }
             if(!Objects.equals(entity.getCurrentUsageCount(), NULL_VALUE)){
-
                 info.setCurrentUsageCount(entity.getCurrentUsageCount());
             }
             if(!Objects.equals(entity.getFilterOpenDateExpiration(), NULL_VALUE)){
